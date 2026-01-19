@@ -11,8 +11,14 @@ import comfy.utils
 import comfy.model_management
 from comfy_extras.nodes_latent import reshape_latent_to
 import node_helpers
-from comfy_api.latest import ComfyExtension, io
+from comfy_api.latest import ComfyExtension, io, ui
 from nodes import MAX_RESOLUTION
+
+try:
+    import moderngl
+    MODERNGL_AVAILABLE = True
+except ImportError:
+    MODERNGL_AVAILABLE = False
 
 class Blend(io.ComfyNode):
     @classmethod
@@ -211,6 +217,118 @@ class Sharpen(io.ComfyNode):
         result = torch.clamp(sharpened, 0, 1)
 
         return io.NodeOutput(result.to(comfy.model_management.intermediate_device()))
+
+class BlurAdvanced(io.ComfyNode):
+    @classmethod
+    def define_schema(cls):
+        return io.Schema(
+            node_id="ImageBlurAdvanced",
+            category="image/postprocessing",
+            inputs=[
+                io.Image.Input("image"),
+                io.Combo.Input("blur_type", options=["gaussian", "box", "zoom"]),
+                io.Int.Input("amount", default=8, min=1, max=64, step=1),
+            ],
+            outputs=[
+                io.Image.Output(),
+            ],
+            hidden=[io.Hidden.prompt, io.Hidden.extra_pnginfo],
+        )
+
+    @classmethod
+    def execute(cls, image: torch.Tensor, blur_type: str, amount: int) -> io.NodeOutput:
+        if amount == 0:
+            return io.NodeOutput(image, ui=ui.PreviewImage(image, cls=cls))
+
+        image = image.to(comfy.model_management.get_torch_device())
+        batch_size, height, width, channels = image.shape
+
+        if blur_type == "gaussian":
+            result = cls.gaussian_blur(image, amount)
+        elif blur_type == "box":
+            result = cls.box_blur(image, amount)
+        elif blur_type == "zoom":
+            result = cls.zoom_blur(image, amount)
+        else:
+            raise ValueError(f"Unsupported blur type: {blur_type}")
+
+        result = result.to(comfy.model_management.intermediate_device())
+        return io.NodeOutput(result, ui=ui.PreviewImage(result, cls=cls))
+
+    @classmethod
+    def gaussian_blur(cls, image: torch.Tensor, amount: int) -> torch.Tensor:
+        batch_size, height, width, channels = image.shape
+        kernel_size = amount * 2 + 1
+        sigma = amount / 3.0
+
+        kernel = gaussian_kernel(kernel_size, sigma, device=image.device).repeat(channels, 1, 1).unsqueeze(1)
+
+        image_tensor = image.permute(0, 3, 1, 2)
+        padded_image = F.pad(image_tensor, (amount, amount, amount, amount), 'reflect')
+        blurred = F.conv2d(padded_image, kernel, padding=kernel_size // 2, groups=channels)[:,:,amount:-amount, amount:-amount]
+        blurred = blurred.permute(0, 2, 3, 1)
+
+        return blurred
+
+    @classmethod
+    def box_blur(cls, image: torch.Tensor, amount: int) -> torch.Tensor:
+        batch_size, height, width, channels = image.shape
+        kernel_size = amount * 2 + 1
+
+        # Create a box kernel (uniform averaging)
+        kernel = torch.ones(kernel_size, kernel_size, device=image.device) / (kernel_size * kernel_size)
+        kernel = kernel.repeat(channels, 1, 1).unsqueeze(1)
+
+        image_tensor = image.permute(0, 3, 1, 2)
+        padded_image = F.pad(image_tensor, (amount, amount, amount, amount), 'reflect')
+        blurred = F.conv2d(padded_image, kernel, padding=kernel_size // 2, groups=channels)[:,:,amount:-amount, amount:-amount]
+        blurred = blurred.permute(0, 2, 3, 1)
+
+        return blurred
+
+    @classmethod
+    def zoom_blur(cls, image: torch.Tensor, amount: int) -> torch.Tensor:
+        batch_size, height, width, channels = image.shape
+
+        # Create center coordinates
+        center_x, center_y = width / 2, height / 2
+
+        # Initialize output
+        result = torch.zeros_like(image)
+
+        # Number of samples for zoom blur
+        num_samples = min(amount, 32)
+
+        # Create zoom levels
+        for i in range(num_samples):
+            # Calculate zoom factor
+            scale = 1.0 - (i / num_samples) * (amount / 100.0)
+            scale = max(scale, 0.5)  # Prevent too much zoom
+
+            # Calculate new dimensions
+            new_height = int(height * scale)
+            new_width = int(width * scale)
+
+            # Zoom the image
+            image_tensor = image.permute(0, 3, 1, 2)
+            zoomed = F.interpolate(image_tensor, size=(new_height, new_width), mode='bilinear', align_corners=False)
+
+            # Pad back to original size (centered)
+            pad_top = (height - new_height) // 2
+            pad_bottom = height - new_height - pad_top
+            pad_left = (width - new_width) // 2
+            pad_right = width - new_width - pad_left
+
+            zoomed = F.pad(zoomed, (pad_left, pad_right, pad_top, pad_bottom), mode='replicate')
+            zoomed = zoomed.permute(0, 2, 3, 1)
+
+            # Accumulate
+            result += zoomed
+
+        # Average all samples
+        result = result / num_samples
+
+        return result
 
 class ImageScaleToTotalPixels(io.ComfyNode):
     upscale_methods = ["nearest-exact", "bilinear", "area", "bicubic", "lanczos"]
@@ -498,25 +616,191 @@ def batch_latents(latents: list[dict[str, torch.Tensor]]) -> dict[str, torch.Ten
     samples_out["samples"] = torch.cat(tensors, dim=0)
     return samples_out
 
-class BatchImagesNode(io.ComfyNode):
+class GLSLShader(io.ComfyNode):
+    """
+    Apply custom GLSL fragment shaders to images.
+    Supports custom shader code with automatic time and resolution uniforms.
+    """
+
+    # Default passthrough shader
+    DEFAULT_SHADER = """
+// Default passthrough shader
+// Available uniforms:
+//   uniform sampler2D iImage;     // Input texture
+//   uniform vec2 iResolution;     // Image resolution
+//   uniform float iTime;          // Time in seconds (can be set manually)
+//   uniform vec2 iMouse;          // Mouse position (can be set manually)
+//
+// Available functions:
+//   vec4 texture2D(sampler2D, vec2) // Sample texture at UV coordinates
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = fragCoord / iResolution;
+
+    // Sample the input image
+    fragColor = texture2D(iImage, uv);
+}
+"""
+
     @classmethod
     def define_schema(cls):
-        autogrow_template = io.Autogrow.TemplatePrefix(io.Image.Input("image"), prefix="image", min=2, max=50)
         return io.Schema(
-            node_id="BatchImagesNode",
-            display_name="Batch Images",
-            category="image",
+            node_id="GLSLShader",
+            display_name="Image Filter",
+            category="image/postprocessing",
             inputs=[
-                io.Autogrow.Input("images", template=autogrow_template)
+                io.Image.Input("image"),
+                io.String.Input("shader_code", default=cls.DEFAULT_SHADER, multiline=True),
             ],
             outputs=[
-                io.Image.Output()
-            ]
+                io.Image.Output(),
+            ],
+            hidden=[io.Hidden.prompt, io.Hidden.extra_pnginfo],
         )
 
     @classmethod
-    def execute(cls, images: io.Autogrow.Type) -> io.NodeOutput:
-        return io.NodeOutput(batch_images(list(images.values())))
+    def execute(cls, image: torch.Tensor, shader_code: str) -> io.NodeOutput:
+        if not MODERNGL_AVAILABLE:
+            raise RuntimeError("ModernGL is not installed. Install it with: pip install moderngl")
+
+        # Process each image in the batch
+        batch_size, height, width, channels = image.shape
+        result_images = []
+
+        for i in range(batch_size):
+            img = image[i]
+            processed = cls.apply_shader(img, shader_code)
+            result_images.append(processed)
+
+        result = torch.stack(result_images, dim=0)
+        return io.NodeOutput(result, ui=ui.PreviewImage(result, cls=cls))
+
+    @classmethod
+    def apply_shader(cls, image: torch.Tensor, shader_code: str) -> torch.Tensor:
+        """Apply GLSL shader to a single image"""
+        height, width, channels = image.shape
+
+        # Create a standalone ModernGL context
+        ctx = moderngl.create_standalone_context()
+
+        # Convert PyTorch tensor to numpy and ensure it's in the right format
+        img_np = image.cpu().numpy()
+
+        # Handle grayscale images by converting to RGB
+        if channels == 1:
+            img_np = np.repeat(img_np, 3, axis=2)
+            channels = 3
+
+        # Ensure we have either RGB or RGBA
+        if channels == 3:
+            # Add alpha channel
+            alpha = np.ones((height, width, 1), dtype=np.float32)
+            img_np = np.concatenate([img_np, alpha], axis=2)
+            channels = 4
+
+        # Convert to uint8 for texture upload (0-255 range)
+        img_uint8 = (img_np * 255).astype('uint8')
+
+        # Create texture from image
+        texture = ctx.texture((width, height), 4, data=img_uint8.tobytes())
+        texture.filter = (moderngl.LINEAR, moderngl.LINEAR)
+
+        # Create framebuffer for output
+        fbo = ctx.simple_framebuffer((width, height), components=4)
+        fbo.use()
+
+        # Vertex shader (simple passthrough)
+        vertex_shader = """
+        #version 330
+        in vec2 in_vert;
+        out vec2 v_text;
+
+        void main() {
+            v_text = (in_vert + 1.0) / 2.0;
+            gl_Position = vec4(in_vert, 0.0, 1.0);
+        }
+        """
+
+        # Wrap user's fragment shader code
+        fragment_shader = f"""
+        #version 330
+        uniform sampler2D iImage;
+        uniform vec2 iResolution;
+        uniform float iTime;
+        uniform vec2 iMouse;
+
+        in vec2 v_text;
+        out vec4 f_color;
+
+        {shader_code}
+
+        void main() {{
+            vec2 fragCoord = v_text * iResolution;
+            mainImage(f_color, fragCoord);
+        }}
+        """
+
+        try:
+            # Compile shader program
+            program = ctx.program(
+                vertex_shader=vertex_shader,
+                fragment_shader=fragment_shader
+            )
+        except Exception as e:
+            ctx.release()
+            raise RuntimeError(f"Shader compilation failed: {str(e)}")
+
+        # Set uniforms (only set if they exist in the shader)
+        if 'iImage' in program:
+            program['iImage'].value = 0
+        if 'iResolution' in program:
+            program['iResolution'].value = (width, height)
+
+        # Create a fullscreen quad
+        vertices = np.array([
+            -1.0, -1.0,
+             1.0, -1.0,
+            -1.0,  1.0,
+             1.0,  1.0,
+        ], dtype='f4')
+
+        vbo = ctx.buffer(vertices.tobytes())
+        vao = ctx.simple_vertex_array(program, vbo, 'in_vert')
+
+        # Bind texture and render
+        texture.use(location=0)
+        vao.render(moderngl.TRIANGLE_STRIP)
+
+        # Read the result
+        data = fbo.read(components=4)
+        img_result = np.frombuffer(data, dtype=np.uint8).reshape((height, width, 4))
+
+        # Flip vertically (OpenGL coordinates are bottom-up)
+        img_result = np.flipud(img_result)
+
+        # Convert back to float32 [0, 1] range
+        img_result = img_result.astype(np.float32) / 255.0
+
+        # Convert back to RGB if original was RGB
+        original_channels = image.shape[2]
+        if original_channels == 3:
+            img_result = img_result[:, :, :3]
+        elif original_channels == 1:
+            img_result = img_result[:, :, :1]
+
+        # Clean up
+        vao.release()
+        vbo.release()
+        program.release()
+        texture.release()
+        fbo.release()
+        ctx.release()
+
+        # Convert back to PyTorch tensor
+        result = torch.from_numpy(img_result).to(image.device)
+
+        return result
 
 class BatchMasksNode(io.ComfyNode):
     @classmethod
@@ -558,55 +842,23 @@ class BatchLatentsNode(io.ComfyNode):
     def execute(cls, latents: io.Autogrow.Type) -> io.NodeOutput:
         return io.NodeOutput(batch_latents(list(latents.values())))
 
-class BatchImagesMasksLatentsNode(io.ComfyNode):
-    @classmethod
-    def define_schema(cls):
-        matchtype_template = io.MatchType.Template("input", allowed_types=[io.Image, io.Mask, io.Latent])
-        autogrow_template = io.Autogrow.TemplatePrefix(
-                io.MatchType.Input("input", matchtype_template),
-                prefix="input", min=1, max=50)
-        return io.Schema(
-            node_id="BatchImagesMasksLatentsNode",
-            display_name="Batch Images/Masks/Latents",
-            category="util",
-            inputs=[
-                io.Autogrow.Input("inputs", template=autogrow_template)
-            ],
-            outputs=[
-                io.MatchType.Output(id=None, template=matchtype_template)
-            ]
-        )
-
-    @classmethod
-    def execute(cls, inputs: io.Autogrow.Type) -> io.NodeOutput:
-        batched = None
-        values = list(inputs.values())
-        # latents
-        if isinstance(values[0], dict):
-            batched = batch_latents(values)
-        # images
-        elif is_image(values[0]):
-            batched = batch_images(values)
-        # masks
-        else:
-            batched = batch_masks(values)
-        return io.NodeOutput(batched)
-
 class PostProcessingExtension(ComfyExtension):
     @override
     async def get_node_list(self) -> list[type[io.ComfyNode]]:
-        return [
+        nodes = [
             Blend,
             Blur,
+            BlurAdvanced,
             Quantize,
             Sharpen,
             ImageScaleToTotalPixels,
             ResizeImageMaskNode,
-            BatchImagesNode,
             BatchMasksNode,
             BatchLatentsNode,
-            # BatchImagesMasksLatentsNode,
         ]
+        if MODERNGL_AVAILABLE:
+            nodes.append(GLSLShader)
+        return nodes
 
 async def comfy_entrypoint() -> PostProcessingExtension:
     return PostProcessingExtension()
