@@ -1887,17 +1887,15 @@ function renderAllNodesTab(container, state) {
             const nodeCount = filteredPackNodes.length;
 
             const folderEl = document.createElement('div');
-            folderEl.className = `nodes-folder depth-0 ${isExpanded ? 'expanded' : ''}`;
+            folderEl.className = `nodes-category-item ${isExpanded ? '' : 'collapsed'}`;
             folderEl.innerHTML = `
-                <div class="nodes-folder-header">
-                    <span class="nodes-folder-chevron">${ICONS.chevron}</span>
-                    <span class="nodes-folder-name">${toTitleCase(packName.replace('ComfyUI-', '').replace('comfyui_', ''))}</span>
-                    <span class="nodes-folder-count">${nodeCount}</span>
-                </div>
+                <span class="nodes-category-icon">${ICONS.folder}</span>
+                <span>${toTitleCase(packName.replace('ComfyUI-', '').replace('comfyui_', ''))}</span>
+                <span class="nodes-category-count">${nodeCount}</span>
+                <span class="nodes-category-chevron">${ICONS.chevron}</span>
             `;
 
-            const header = folderEl.querySelector('.nodes-folder-header');
-            header.onclick = (e) => {
+            folderEl.onclick = (e) => {
                 e.stopPropagation();
                 state.toggleSection(sectionId);
                 renderAllNodesTab(container, state);
@@ -1907,10 +1905,7 @@ function renderAllNodesTab(container, state) {
 
             if (isExpanded) {
                 // Render subfolder tree
-                const contentEl = document.createElement('div');
-                contentEl.className = 'nodes-folder-content';
-                renderCustomSubtree(contentEl, tree, sectionId, state, 0);
-                container.appendChild(contentEl);
+                renderCustomSubtree(container, tree, sectionId, state, 0);
             }
         }
     }
