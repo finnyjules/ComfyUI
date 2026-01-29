@@ -1724,7 +1724,21 @@ function renderAllNodesTab(container, state) {
     container.innerHTML = '';
 
     // Exclude custom node packs from All Nodes tab (they appear in Custom tab only)
-    const excludedCustomPacks = ['ComfyUI-VideoHelperSuite', 'ComfyUI-KJNodes'];
+    const excludedCustomPacks = [
+        'ComfyUI-VideoHelperSuite',
+        'ComfyUI-KJNodes',
+        'ComfyUI-Advanced-ControlNet',
+        'ComfyUI-AnimateDiff-Evolved',
+        'ComfyUI-DepthAnythingV2',
+        'ComfyUI-Florence2',
+        'ComfyUI-Frame-Interpolation',
+        'ComfyUI-Impact-Pack',
+        'ComfyUI-LivePortraitKJ',
+        'ComfyUI-SUPIR',
+        'ComfyUI-WanVideoWrapper',
+        'ComfyUI-segment-anything-2',
+        'comfyui_controlnet_aux'
+    ];
     const customNodes = Object.entries(state.categorizedNodes.custom)
         .filter(([packName]) => !excludedCustomPacks.includes(packName))
         .flatMap(([, nodes]) => nodes);
