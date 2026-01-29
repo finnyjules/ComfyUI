@@ -491,6 +491,29 @@ function toTitleCase(str) {
         .join(' ');
 }
 
+// Sort folder names alphabetically, but push "Advanced" to bottom and "For Testing" below that
+function sortFolderNames(names) {
+    return names.sort((a, b) => {
+        const aLower = a.toLowerCase();
+        const bLower = b.toLowerCase();
+
+        // "For Testing" goes to very bottom
+        const aIsTesting = aLower.includes('testing') || aLower.includes('_for_testing');
+        const bIsTesting = bLower.includes('testing') || bLower.includes('_for_testing');
+        if (aIsTesting && !bIsTesting) return 1;
+        if (bIsTesting && !aIsTesting) return -1;
+
+        // "Advanced" goes to bottom (but above "For Testing")
+        const aIsAdvanced = aLower === 'advanced';
+        const bIsAdvanced = bLower === 'advanced';
+        if (aIsAdvanced && !bIsAdvanced) return 1;
+        if (bIsAdvanced && !aIsAdvanced) return -1;
+
+        // Default: alphabetical
+        return a.localeCompare(b);
+    });
+}
+
 function categorizeNodes(nodeDefinitions) {
     const categorized = {
         core: [],
@@ -1537,8 +1560,8 @@ function renderSubfolderTree(container, tree, state, sectionPrefix, depth = 0) {
         container.appendChild(nodesList);
     }
 
-    // Then render subfolders
-    const subfolderNames = Object.keys(tree.__children).sort((a, b) => a.localeCompare(b));
+    // Then render subfolders (Advanced at bottom, For Testing below that)
+    const subfolderNames = sortFolderNames(Object.keys(tree.__children));
 
     for (const folderName of subfolderNames) {
         const folder = tree.__children[folderName];
@@ -1630,8 +1653,8 @@ function countTreeNodes(tree) {
 }
 
 function renderCategoryTreeLevel(container, tree, state, prefix = 'all_', depth = 0) {
-    // Sort category names alphabetically
-    const categoryNames = Object.keys(tree).sort((a, b) => a.localeCompare(b));
+    // Sort category names (Advanced at bottom, For Testing below that)
+    const categoryNames = sortFolderNames(Object.keys(tree));
 
     for (const categoryName of categoryNames) {
         const category = tree[categoryName];
