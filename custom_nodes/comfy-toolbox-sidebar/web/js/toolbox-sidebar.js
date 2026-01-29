@@ -3,7 +3,7 @@
  * A redesigned nodes panel with 3 tabs: Essentials, All Nodes, Custom
  */
 
-import { app } from "../../scripts/app.js";
+import { app } from "/scripts/app.js";
 
 // ============================================================================
 // CONFIGURATION
