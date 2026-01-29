@@ -1718,7 +1718,8 @@ const MAIN_CATEGORY_ORDER = [
     'Utilities',
     'Development',
     'Misc',
-    'Other'
+    'Other',
+    'Custom'
 ];
 
 function renderAllNodesTab(container, state) {
@@ -1832,6 +1833,88 @@ function renderAllNodesTab(container, state) {
 
             const categoryTree = buildCategoryTree(nodes);
             renderCategoryTreeLevel(container, categoryTree, state, `all_${mainCat}_`);
+        }
+    }
+
+    // Render Custom node packs section at the bottom
+    const customPacks = state.categorizedNodes.custom;
+    const packNames = Object.keys(customPacks).sort();
+
+    if (packNames.length > 0) {
+        const customHeader = document.createElement('div');
+        customHeader.className = 'nodes-category-header';
+        customHeader.textContent = 'CUSTOM';
+        container.appendChild(customHeader);
+
+        for (const packName of packNames) {
+            const nodes = customPacks[packName];
+
+            // Filter by search query if active
+            const filteredPackNodes = query
+                ? nodes.filter(n =>
+                    n.displayName.toLowerCase().includes(query) ||
+                    n.type.toLowerCase().includes(query) ||
+                    n.category.toLowerCase().includes(query) ||
+                    packName.toLowerCase().includes(query)
+                  )
+                : nodes;
+
+            if (filteredPackNodes.length === 0) continue;
+
+            // Build subfolder tree from category paths
+            const tree = { nodes: [], children: {} };
+            for (const node of filteredPackNodes) {
+                const categoryPath = node.category || 'uncategorized';
+                const parts = categoryPath.split('/');
+                let current = tree;
+
+                for (let i = 0; i < parts.length; i++) {
+                    const part = parts[i];
+                    if (i === parts.length - 1) {
+                        if (!current.children[part]) {
+                            current.children[part] = { nodes: [], children: {} };
+                        }
+                        current.children[part].nodes.push(node);
+                    } else {
+                        if (!current.children[part]) {
+                            current.children[part] = { nodes: [], children: {} };
+                        }
+                        current = current.children[part];
+                    }
+                }
+            }
+
+            // Render the pack as a collapsible folder
+            const sectionId = `all_custom_${packName}`;
+            const isExpanded = state.isSectionExpanded(sectionId);
+            const nodeCount = filteredPackNodes.length;
+
+            const folderEl = document.createElement('div');
+            folderEl.className = `nodes-folder depth-0 ${isExpanded ? 'expanded' : ''}`;
+            folderEl.innerHTML = `
+                <div class="nodes-folder-header">
+                    <span class="nodes-folder-chevron">${ICONS.chevron}</span>
+                    <span class="nodes-folder-name">${toTitleCase(packName.replace('ComfyUI-', '').replace('comfyui_', ''))}</span>
+                    <span class="nodes-folder-count">${nodeCount}</span>
+                </div>
+            `;
+
+            const header = folderEl.querySelector('.nodes-folder-header');
+            header.onclick = (e) => {
+                e.stopPropagation();
+                state.toggleSection(sectionId);
+                renderAllNodesTab(container, state);
+            };
+
+            container.appendChild(folderEl);
+
+            if (isExpanded) {
+                // Render subfolder tree
+                const contentEl = document.createElement('div');
+                contentEl.className = 'nodes-folder-content';
+                renderCustomSubtree(contentEl, tree, sectionId, state, 0);
+                container.appendChild(contentEl);
+            }
         }
     }
 
