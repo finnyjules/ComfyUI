@@ -1713,6 +1713,7 @@ const MAIN_CATEGORY_ORDER = [
     'Upscaling & Enhancement',
     'Animation & Video',
     'Specialized Workflows',
+    '3D',
     'Utilities',
     'Development',
     'Misc',

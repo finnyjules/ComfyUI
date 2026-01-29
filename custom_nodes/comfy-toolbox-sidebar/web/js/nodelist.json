@@ -12882,35 +12882,35 @@
     },
     {
       "name": "Load3D",
-      "mainCategory": "Misc",
+      "mainCategory": "3D",
       "category": "3d",
       "path": "3d",
       "description": "Loads 3D model files into workflow for processing"
     },
     {
       "name": "Preview3D",
-      "mainCategory": "Misc",
+      "mainCategory": "3D",
       "category": "3d",
       "path": "3d",
       "description": "Displays 3D model preview in ComfyUI interface"
     },
     {
       "name": "SaveGLB",
-      "mainCategory": "Misc",
+      "mainCategory": "3D",
       "category": "3d",
       "path": "3d",
       "description": "Saves 3D model as GLB file format"
     },
     {
       "name": "VoxelToMesh",
-      "mainCategory": "Misc",
+      "mainCategory": "3D",
       "category": "3d",
       "path": "3d",
       "description": "Converts voxel data into 3D mesh geometry"
     },
     {
       "name": "VoxelToMeshBasic",
-      "mainCategory": "Misc",
+      "mainCategory": "3D",
       "category": "3d",
       "path": "3d",
       "description": "Basic voxel to mesh conversion"
