@@ -1705,7 +1705,6 @@ const MAIN_CATEGORY_ORDER = [
     'Audio',
     'Utilities',
     'Development',
-    'Misc',
     'Other',
     'Custom'
 ];

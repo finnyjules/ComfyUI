@@ -12868,14 +12868,14 @@
     },
     {
       "name": "HunyuanRefinerLatent",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "sd",
       "path": "sd",
       "description": "Refines Hunyuan latent quality"
     },
     {
       "name": "HunyuanVideo15SuperResolution",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "sd",
       "path": "sd",
       "description": "Super resolution for Hunyuan Video 1.5"
@@ -13078,1386 +13078,1386 @@
     },
     {
       "name": "CFGNorm",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Normalizes CFG guidance values"
     },
     {
       "name": "CFGZeroStar",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "CFG Zero Star guidance method"
     },
     {
       "name": "SkipLayerGuidanceDiT",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Skip layer guidance for DiT models"
     },
     {
       "name": "SkipLayerGuidanceDiTSimple",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Simple skip layer guidance DiT"
     },
     {
       "name": "SkipLayerGuidanceSD3",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Skip layer guidance for SD3"
     },
     {
       "name": "SkipLayerGuidanceWanVideo",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Skip layer guidance for WAN video"
     },
     {
       "name": "TCFG",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/guidance",
       "description": "Tangential damping CFG guidance"
     },
     {
       "name": "ConditioningTimestepsRange",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks",
       "description": "Sets conditioning timestep range"
     },
     {
       "name": "ModelSamplingAuraFlow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Model sampling for AuraFlow"
     },
     {
       "name": "ModelSamplingContinuousEDM",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Uses continuous EDM sampling for modern models precisely"
     },
     {
       "name": "ModelSamplingContinuousV",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Uses V-prediction sampling for certain model types specifically"
     },
     {
       "name": "ModelSamplingDiscrete",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Sets discrete timestep sampling for older SD models"
     },
     {
       "name": "ModelSamplingFlux",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Configures sampling specifically for Flux model architecture family"
     },
     {
       "name": "ModelSamplingLTXV",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Model sampling for LTXV"
     },
     {
       "name": "ModelSamplingSD3",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Sets up sampling for SD3 model family correctly"
     },
     {
       "name": "ModelSamplingStableCascade",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Configures sampling specifically for Stable Cascade model architecture"
     },
     {
       "name": "RenormCFG",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Renormalizes CFG for quality"
     },
     {
       "name": "RescaleCFG",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model",
       "description": "Prevents oversaturation by rescaling classifier-free guidance values"
     },
     {
       "name": "CLIPMergeAdd",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Adds one CLIP encoder's weights to another CLIP"
     },
     {
       "name": "CLIPMergeSimple",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Combines two CLIP text encoders using simple ratio"
     },
     {
       "name": "CLIPMergeSubtract",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Subtracts one CLIP encoder's weights from another CLIP"
     },
     {
       "name": "ModelMergeAdd",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Adds one model's weights to another model's weights"
     },
     {
       "name": "ModelMergeBlocks",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Merges models with different ratios for each layer block"
     },
     {
       "name": "ModelMergeSimple",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Combines two models together using simple ratio blending method"
     },
     {
       "name": "ModelMergeSubtract",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging",
       "description": "Subtracts one model's weights from another model's weights"
     },
     {
       "name": "EasyCache",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/debug/model",
       "description": "Simple caching to reuse computations for speed"
     },
     {
       "name": "LazyCache",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/debug/model",
       "description": "Lazy evaluation cache for memory efficiency optimization"
     },
     {
       "name": "ModelComputeDtype",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/debug/model",
       "description": "Gets model compute data type"
     },
     {
       "name": "SetClipHooks",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/clip",
       "description": "Sets hooks on CLIP model"
     },
     {
       "name": "CombineHooks2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/combine",
       "description": "Combines two hooks together into single hook"
     },
     {
       "name": "CombineHooks4",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/combine",
       "description": "Combines four hooks together into single hook"
     },
     {
       "name": "CombineHooks8",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/combine",
       "description": "Combines eight hooks together"
     },
     {
       "name": "PairConditioningCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond pair",
       "description": "Combines paired conditionings"
     },
     {
       "name": "PairConditioningSetDefaultCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond pair",
       "description": "Sets default combine for pairs"
     },
     {
       "name": "PairConditioningSetProperties",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond pair",
       "description": "Sets properties on cond pair"
     },
     {
       "name": "PairConditioningSetPropertiesAndCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond pair",
       "description": "Sets props and combines pairs"
     },
     {
       "name": "ConditioningSetDefaultCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond single",
       "description": "Sets default combining behavior for conditioning pairs"
     },
     {
       "name": "ConditioningSetProperties",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond single",
       "description": "Sets custom properties on conditioning data object"
     },
     {
       "name": "ConditioningSetPropertiesAndCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/cond single",
       "description": "Sets props and combines conds"
     },
     {
       "name": "CreateHookLora",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/create",
       "description": "Creates LoRA hook for dynamic weight adjustment"
     },
     {
       "name": "CreateHookLoraModelOnly",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/create",
       "description": "Creates LoRA hook model only"
     },
     {
       "name": "CreateHookModelAsLora",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/create",
       "description": "Creates model as LoRA hook"
     },
     {
       "name": "CreateHookModelAsLoraModelOnly",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/create",
       "description": "Creates model LoRA hook MO"
     },
     {
       "name": "CreateHookKeyframe",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/scheduling",
       "description": "Creates hook keyframe timing"
     },
     {
       "name": "CreateHookKeyframesFromFloats",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/scheduling",
       "description": "Creates keyframes from float list"
     },
     {
       "name": "CreateHookKeyframesInterpolated",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/scheduling",
       "description": "Creates interpolated hook keyframes"
     },
     {
       "name": "SetHookKeyframes",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/hooks/scheduling",
       "description": "Applies keyframed changes to hooks over time"
     },
     {
       "name": "ModelMergeAuraflow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges AuraFlow models"
     },
     {
       "name": "ModelMergeCosmos14B",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Cosmos 14B models"
     },
     {
       "name": "ModelMergeCosmos7B",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Cosmos 7B models"
     },
     {
       "name": "ModelMergeCosmosPredict2_14B",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Cosmos Predict2 14B"
     },
     {
       "name": "ModelMergeCosmosPredict2_2B",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Cosmos Predict2 2B"
     },
     {
       "name": "ModelMergeFlux1",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Flux models with proper architecture handling correctly"
     },
     {
       "name": "ModelMergeLTXV",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges LTXV video models"
     },
     {
       "name": "ModelMergeMochiPreview",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Mochi preview models"
     },
     {
       "name": "ModelMergeQwenImage",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges Qwen image models"
     },
     {
       "name": "ModelMergeSD1",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges SD 1.x models with layer-specific control"
     },
     {
       "name": "ModelMergeSD2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges SD 2.x models with layer-specific control"
     },
     {
       "name": "ModelMergeSD35_Large",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges SD 3.5 Large models"
     },
     {
       "name": "ModelMergeSD3_2B",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges SD3 2B models correctly for architecture"
     },
     {
       "name": "ModelMergeSDXL",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges SDXL models with layer-specific ratio control"
     },
     {
       "name": "ModelMergeWAN2_1",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "advanced",
       "path": "advanced/model_merging/model_specific",
       "description": "Merges WAN 2.1 video models"
     },
     {
       "name": "LayerColor: AutoAdjust",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Automatically adjusts image colors for better appearance"
     },
     {
       "name": "LayerColor: AutoAdjustV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Auto adjusts colors version 2"
     },
     {
       "name": "LayerColor: AutoBrightness",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Automatically adjusts brightness"
     },
     {
       "name": "LayerColor: Brightness & Contrast",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts image brightness and contrast levels together"
     },
     {
       "name": "LayerColor: BrightnessContrastV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Brightness contrast version 2"
     },
     {
       "name": "LayerColor: Color of Shadow & Highlight",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Colors shadows and highlights"
     },
     {
       "name": "LayerColor: ColorAdapter",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adapts colors between images"
     },
     {
       "name": "LayerColor: ColorBalance",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Balances shadow midtone highlight colors"
     },
     {
       "name": "LayerColor: ColorofShadowHighlightV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Shadow highlight color version 2"
     },
     {
       "name": "LayerColor: ColorTemperature",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts warm or cool color temperature of image"
     },
     {
       "name": "LayerColor: Exposure",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts image exposure level"
     },
     {
       "name": "LayerColor: Gamma",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Applies gamma correction to adjust image midtones"
     },
     {
       "name": "LayerColor: HSV",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts hue saturation and value color properties"
     },
     {
       "name": "LayerColor: LAB",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts LAB color space values"
     },
     {
       "name": "LayerColor: Levels",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts image levels like Photoshop"
     },
     {
       "name": "LayerColor: LUT Apply",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Applies color lookup table to image"
     },
     {
       "name": "LayerColor: Negative",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Inverts image to negative colors"
     },
     {
       "name": "LayerColor: RGB",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts red green blue color channels separately"
     },
     {
       "name": "LayerColor: YUV",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Adjusts YUV color space values"
     },
     {
       "name": "LayerUtility: ColorName",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Gets color name from RGB value"
     },
     {
       "name": "LayerUtility: NameToColor",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerColor",
       "description": "Converts color name to RGB value"
     },
     {
       "name": "LayerFilter: AddGrain",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Adds film grain texture to image"
     },
     {
       "name": "LayerFilter: ChannelShake",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Shifts RGB channels for glitch effect"
     },
     {
       "name": "LayerFilter: ColorMap",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Maps colors using gradient palette"
     },
     {
       "name": "LayerFilter: Film",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Applies vintage film grain and color effect"
     },
     {
       "name": "LayerFilter: FilmV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Film effect version 2 with more options"
     },
     {
       "name": "LayerFilter: GaussianBlur",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Blurs image using Gaussian smoothing algorithm method"
     },
     {
       "name": "LayerFilter: GaussianBlurV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Gaussian blur version 2 improved"
     },
     {
       "name": "LayerFilter: HalfTone",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Creates halftone dot pattern effect"
     },
     {
       "name": "LayerFilter: HDREffects",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Applies HDR tone mapping effects"
     },
     {
       "name": "LayerFilter: LightLeak",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Adds light leak film effect"
     },
     {
       "name": "LayerFilter: MotionBlur",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Adds directional motion blur effect to image"
     },
     {
       "name": "LayerFilter: Sharp & Soft",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Adjusts image sharpness or softness level"
     },
     {
       "name": "LayerFilter: SkinBeauty",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Smooths skin while preserving important facial details"
     },
     {
       "name": "LayerFilter: SoftLight",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Applies soft light blending effect to image"
     },
     {
       "name": "LayerFilter: WaterColor",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerFilter",
       "description": "Applies watercolor painting effect"
     },
     {
       "name": "LayerStyle: ColorOverlay",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Applies solid color tint over entire layer"
     },
     {
       "name": "LayerStyle: ColorOverlay V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Color overlay version 2 improved"
     },
     {
       "name": "LayerStyle: DropShadow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Adds shadow effect behind image or layer"
     },
     {
       "name": "LayerStyle: DropShadow V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Drop shadow version 2 improved"
     },
     {
       "name": "LayerStyle: DropShadow V3",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Drop shadow version 3 with more options"
     },
     {
       "name": "LayerStyle: Gradient Map",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Maps gradient colors to image tones"
     },
     {
       "name": "LayerStyle: GradientOverlay",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Applies gradient color overlay to entire layer"
     },
     {
       "name": "LayerStyle: GradientOverlay V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Gradient overlay version 2 improved"
     },
     {
       "name": "LayerStyle: InnerGlow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Adds glowing effect inside edges of layer"
     },
     {
       "name": "LayerStyle: InnerGlow V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Inner glow version 2 improved"
     },
     {
       "name": "LayerStyle: InnerShadow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Adds shadow inside layer edges"
     },
     {
       "name": "LayerStyle: InnerShadow V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Inner shadow version 2 improved"
     },
     {
       "name": "LayerStyle: OuterGlow",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Adds glowing effect outside edges of layer"
     },
     {
       "name": "LayerStyle: OuterGlow V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Outer glow version 2 improved"
     },
     {
       "name": "LayerStyle: Stroke",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Adds outlined border around edges of layer"
     },
     {
       "name": "LayerStyle: Stroke V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerStyle",
       "description": "Stroke version 2 with more options"
     },
     {
       "name": "LayerUtility: CheckMask",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Checks if mask is valid"
     },
     {
       "name": "LayerUtility: CheckMaskV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Check mask version 2 improved"
     },
     {
       "name": "LayerUtility: ColorImage",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates solid color image"
     },
     {
       "name": "LayerUtility: ColorImage V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Color image version 2 improved"
     },
     {
       "name": "LayerUtility: ColorPicker",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Picks color from image at specified coordinates"
     },
     {
       "name": "LayerUtility: CropBoxResolve",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Resolves crop box coordinates"
     },
     {
       "name": "LayerUtility: CropByMask",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Crops image using mask bounds"
     },
     {
       "name": "LayerUtility: CropByMask V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Crop by mask version 2"
     },
     {
       "name": "LayerUtility: CropByMask V3",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Crop by mask version 3"
     },
     {
       "name": "LayerUtility: ExtendCanvas",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Extends canvas with padding"
     },
     {
       "name": "LayerUtility: ExtendCanvasV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Extend canvas version 2 improved"
     },
     {
       "name": "LayerUtility: FluxKontextImageScale",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scales image for Flux Kontext"
     },
     {
       "name": "LayerUtility: GetImageSize",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Gets image width and height"
     },
     {
       "name": "LayerUtility: GetMainColors",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Extracts main colors from image"
     },
     {
       "name": "LayerUtility: GetMainColorsV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Get main colors version 2"
     },
     {
       "name": "LayerUtility: GradientImage",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates gradient image"
     },
     {
       "name": "LayerUtility: GradientImage V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Gradient image version 2"
     },
     {
       "name": "LayerUtility: HLFrequencyDetailRestore",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Restores high low frequency details"
     },
     {
       "name": "LayerUtility: ICMask",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates IC mask for processing"
     },
     {
       "name": "LayerUtility: ICMaskCropBack",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Crops back using IC mask"
     },
     {
       "name": "LayerUtility: ImageBlend",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Blends two images together"
     },
     {
       "name": "LayerUtility: ImageBlend V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Image blend version 2"
     },
     {
       "name": "LayerUtility: ImageBlendAdvance",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Advanced image blending options"
     },
     {
       "name": "LayerUtility: ImageBlendAdvance V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Advanced blend version 2"
     },
     {
       "name": "LayerUtility: ImageBlendAdvance V3",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Advanced blend version 3"
     },
     {
       "name": "LayerUtility: ImageChannelMerge",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Merges separate channels into image"
     },
     {
       "name": "LayerUtility: ImageChannelSplit",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Splits image into channels"
     },
     {
       "name": "LayerUtility: ImageCombineAlpha",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Combines image with alpha channel"
     },
     {
       "name": "LayerUtility: ImageCompositeHandleMask",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Composites image handling mask"
     },
     {
       "name": "LayerUtility: ImageHub",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Routes images between connections"
     },
     {
       "name": "LayerUtility: ImageMaskScaleAs",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scales image and mask together"
     },
     {
       "name": "LayerUtility: ImageMaskScaleAsV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scale as version 2 improved"
     },
     {
       "name": "LayerUtility: ImageOpacity",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Adjusts image opacity level"
     },
     {
       "name": "LayerUtility: ImageReel",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates image reel sequence"
     },
     {
       "name": "LayerUtility: ImageReelComposit",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Composites image reel layers"
     },
     {
       "name": "LayerUtility: ImageRemoveAlpha",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Removes alpha channel from image"
     },
     {
       "name": "LayerUtility: ImageScaleByAspectRatio",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scales image keeping aspect ratio"
     },
     {
       "name": "LayerUtility: ImageScaleByAspectRatio V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scale by aspect ratio version 2"
     },
     {
       "name": "LayerUtility: ImageScaleRestore",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Restores image to original scale"
     },
     {
       "name": "LayerUtility: ImageScaleRestore V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scale restore version 2"
     },
     {
       "name": "LayerUtility: ImageShift",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Shifts image position with wrap"
     },
     {
       "name": "LayerUtility: LayerImageTransform",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Transforms layer image position"
     },
     {
       "name": "LayerUtility: LayerMaskTransform",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Transforms layer mask position"
     },
     {
       "name": "LayerUtility: LoadVQAModel",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Loads VQA model for image questions"
     },
     {
       "name": "LayerUtility: NanoBananaImageScale",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Scales image for Nano Banana"
     },
     {
       "name": "LayerUtility: RestoreCropBox",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Restores cropped area to original"
     },
     {
       "name": "LayerUtility: RoundedRectangle",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates rounded rectangle shape"
     },
     {
       "name": "LayerUtility: SimpleTextImage",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates simple text on image"
     },
     {
       "name": "LayerUtility: TextImage",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Creates text rendered on image"
     },
     {
       "name": "LayerUtility: TextImage V2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Text image version 2 improved"
     },
     {
       "name": "LayerUtility: VQAPrompt",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility",
       "description": "Visual question answering prompt"
     },
     {
       "name": "LayerUtility: AnyRerouter",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Reroutes any data type"
     },
     {
       "name": "LayerUtility: Boolean",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Creates checkbox toggle for true or false"
     },
     {
       "name": "LayerUtility: BooleanOperator",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Performs boolean logic operations"
     },
     {
       "name": "LayerUtility: BooleanOperatorV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Boolean operator version 2"
     },
     {
       "name": "LayerUtility: ChoiceTextPreset",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Preset choices for text selection"
     },
     {
       "name": "LayerUtility: Float",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Creates decimal number input slider control"
     },
     {
       "name": "LayerUtility: GrayValue",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Gets gray value from color"
     },
     {
       "name": "LayerUtility: HSV Value",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Gets HSV values from color"
     },
     {
       "name": "LayerUtility: If",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": ""
     },
     {
       "name": "LayerUtility: Integer",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Creates integer number input slider control"
     },
     {
       "name": "LayerUtility: NumberCalculator",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Calculates numbers with operations"
     },
     {
       "name": "LayerUtility: NumberCalculatorV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Number calculator version 2"
     },
     {
       "name": "LayerUtility: PrintInfo",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Prints information for debugging"
     },
     {
       "name": "LayerUtility: RandomGenerator",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Generates random values"
     },
     {
       "name": "LayerUtility: RandomGeneratorV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Random generator version 2"
     },
     {
       "name": "LayerUtility: RGB Value",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Gets RGB values as outputs"
     },
     {
       "name": "LayerUtility: Seed",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Provides seed value for randomness"
     },
     {
       "name": "LayerUtility: String",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Creates string text value"
     },
     {
       "name": "LayerUtility: StringCondition",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Conditional logic for strings"
     },
     {
       "name": "LayerUtility: SwitchCase",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Routes input to output based on condition"
     },
     {
       "name": "LayerUtility: TextBox",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Creates text input box for string values"
     },
     {
       "name": "LayerUtility: TextJoin",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Joins multiple text strings"
     },
     {
       "name": "LayerUtility: TextJoinV2",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Text join version 2"
     },
     {
       "name": "LayerUtility: TextPreseter",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Presets for text templates"
     },
     {
       "name": "LayerUtility: XY to Percent",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/Data",
       "description": "Converts XY to percentage values"
     },
     {
       "name": "LayerUtility: BatchSelector",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "\ud83d\ude3adzNodes",
       "path": "\ud83d\ude3adzNodes/LayerUtility/SystemIO",
       "description": "Selects items from batch"
     },
     {
       "name": "FL_ChatterboxDialogTTS",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ChatterBox",
       "path": "ChatterBox",
       "description": "Dialog text-to-speech with Chatterbox"
     },
     {
       "name": "FL_ChatterboxMultilingualTTS",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ChatterBox",
       "path": "ChatterBox",
       "description": "Multilingual TTS with Chatterbox"
     },
     {
       "name": "FL_ChatterboxTTS",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ChatterBox",
       "path": "ChatterBox",
       "description": "Converts text to speech using Chatterbox TTS"
     },
     {
       "name": "FL_ChatterboxTurboTTS",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ChatterBox",
       "path": "ChatterBox",
       "description": "Fast turbo TTS with Chatterbox"
     },
     {
       "name": "FL_ChatterboxVC",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ChatterBox",
       "path": "ChatterBox",
       "description": "Performs voice conversion using Chatterbox voice cloning"
     },
     {
       "name": "LoadLotusModel",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ComfyUI-Lotus",
       "path": "ComfyUI-Lotus",
       "description": "Loads Lotus model for depth or normal generation"
     },
     {
       "name": "LotusSampler",
-      "mainCategory": "Misc",
+      "mainCategory": "Other",
       "category": "ComfyUI-Lotus",
       "path": "ComfyUI-Lotus",
       "description": "Samples using Lotus model for depth normal prediction"
