@@ -395,7 +395,7 @@ async function loadNodeDefinitions() {
 
         // Also load descriptions and paths from nodelist.json
         try {
-            const descResponse = await fetch('/assets/nodelist.json');
+            const descResponse = await fetch('/extensions/comfy-toolbox-sidebar/nodelist.json');
             const descData = await descResponse.json();
 
             // Create lookup maps for descriptions, paths, and mainCategory
