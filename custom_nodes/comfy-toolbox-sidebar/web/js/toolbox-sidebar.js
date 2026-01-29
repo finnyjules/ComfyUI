@@ -1741,15 +1741,12 @@ function renderAllNodesTab(container, state) {
         'ComfyUI-segment-anything-2',
         'comfyui_controlnet_aux'
     ];
-    const customNodes = Object.entries(state.categorizedNodes.custom)
-        .filter(([packName]) => !excludedCustomPacks.includes(packName))
-        .flatMap(([, nodes]) => nodes);
 
+    // Don't include custom nodes in main categories - they'll be shown in CUSTOM section at bottom
     const allNodes = [
         ...state.categorizedNodes.core,
         ...state.categorizedNodes.extras,
-        ...state.categorizedNodes.api,
-        ...customNodes
+        ...state.categorizedNodes.api
     ];
 
     // Filter by search query
