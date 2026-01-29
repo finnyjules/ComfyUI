@@ -1923,6 +1923,12 @@ function renderCustomTab(container, state) {
             </div>
         `;
     } else {
+        // Custom Extensions category header
+        const customExtHeader = document.createElement('div');
+        customExtHeader.className = 'nodes-category-header';
+        customExtHeader.textContent = 'CUSTOM EXTENSIONS';
+        container.appendChild(customExtHeader);
+
         for (const packName of packNames) {
             const nodes = customPacks[packName];
             const filteredNodes = query
@@ -1975,7 +1981,8 @@ function renderCustomTab(container, state) {
             }
         }
 
-        if (container.children.length === 0 && query) {
+        if (container.children.length === 1 && query) {
+            // Only the header exists, no matching packs
             container.innerHTML = `<div class="nodes-empty-state">No custom nodes found</div>`;
         }
     }
