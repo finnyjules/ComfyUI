@@ -1714,6 +1714,7 @@ const MAIN_CATEGORY_ORDER = [
     'Animation & Video',
     'Specialized Workflows',
     '3D',
+    'Audio',
     'Utilities',
     'Development',
     'Misc',

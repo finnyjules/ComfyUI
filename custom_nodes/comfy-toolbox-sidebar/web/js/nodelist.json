@@ -12917,161 +12917,161 @@
     },
     {
       "name": "AudioAdjustVolume",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Adjusts audio volume level"
     },
     {
       "name": "AudioCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Combines two audio tracks together"
     },
     {
       "name": "AudioConcat",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Joins multiple audio clips end to end"
     },
     {
       "name": "AudioCrop",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Crops audio to time range"
     },
     {
       "name": "AudioGetTempo",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Gets audio tempo in BPM"
     },
     {
       "name": "AudioMerge",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Mixes multiple audio tracks together simultaneously overlapping"
     },
     {
       "name": "AudioSeparation",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Separates audio into stems"
     },
     {
       "name": "AudioSpeedShift",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Changes audio playback speed"
     },
     {
       "name": "AudioTempoMatch",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Matches tempo between audio tracks"
     },
     {
       "name": "AudioVideoCombine",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Combines audio with video"
     },
     {
       "name": "EmptyAudio",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Creates empty silent audio"
     },
     {
       "name": "JoinAudioChannels",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Joins mono to stereo audio"
     },
     {
       "name": "LoadAudio",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Loads audio file into workflow for processing"
     },
     {
       "name": "LTXVAudioVAEDecode",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Decodes LTXV audio VAE latent"
     },
     {
       "name": "LTXVAudioVAEEncode",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Encodes audio to LTXV latent"
     },
     {
       "name": "LTXVAudioVAELoader",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Loads LTXV audio VAE model"
     },
     {
       "name": "PreviewAudio",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Plays audio in ComfyUI without saving file"
     },
     {
       "name": "RecordAudio",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Records audio from microphone"
     },
     {
       "name": "SaveAudio",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Saves audio as WAV file to disk storage"
     },
     {
       "name": "SaveAudioMP3",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Saves audio as MP3 file"
     },
     {
       "name": "SaveAudioOpus",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Saves audio as Opus file"
     },
     {
       "name": "SplitAudioChannels",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Splits stereo to mono channels"
     },
     {
       "name": "TrimAudioDuration",
-      "mainCategory": "Misc",
+      "mainCategory": "Audio",
       "category": "audio",
       "path": "audio",
       "description": "Trims audio to time duration"
