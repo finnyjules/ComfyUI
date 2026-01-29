@@ -131,18 +131,6 @@ const ALL_NODES_CATEGORIES = [
 const ESSENTIALS_CONFIG = {
     sections: [
         {
-            id: 'my_subgraphs',
-            name: 'My Subgraphs',
-            collapsed: true,
-            type: 'subgraphs'
-        },
-        {
-            id: 'favorites',
-            name: 'Favorites',
-            collapsed: true,
-            type: 'favorites'
-        },
-        {
             id: 'basic_operations',
             name: 'Basic Operations',
             collapsed: false,
