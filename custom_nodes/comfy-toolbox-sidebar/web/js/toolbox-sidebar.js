@@ -1913,15 +1913,36 @@ function renderCustomTab(container, state) {
     // Filter by search query
     const query = state.searchQuery.toLowerCase();
 
+    // My Subgraphs section (always visible)
+    const subgraphsHeader = document.createElement('div');
+    subgraphsHeader.className = 'nodes-category-header';
+    subgraphsHeader.textContent = 'MY SUBGRAPHS';
+    container.appendChild(subgraphsHeader);
+
+    const subgraphsEmpty = document.createElement('div');
+    subgraphsEmpty.className = 'nodes-empty-state';
+    subgraphsEmpty.style.padding = '16px 20px';
+    subgraphsEmpty.style.fontSize = '12px';
+    subgraphsEmpty.innerHTML = 'No subgraphs saved yet';
+    container.appendChild(subgraphsEmpty);
+
     if (packNames.length === 0) {
-        container.innerHTML = `
-            <div class="nodes-empty-state">
-                <strong>No custom nodes installed</strong><br><br>
-                To add custom nodes like KJNodes or Video Helper Suite,<br>
-                install them using ComfyUI Manager or place them in:<br>
-                <code style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">custom_nodes/</code>
-            </div>
+        // Custom Extensions header even when empty
+        const customExtHeader = document.createElement('div');
+        customExtHeader.className = 'nodes-category-header';
+        customExtHeader.textContent = 'CUSTOM EXTENSIONS';
+        container.appendChild(customExtHeader);
+
+        const emptyState = document.createElement('div');
+        emptyState.className = 'nodes-empty-state';
+        emptyState.style.padding = '16px 20px';
+        emptyState.innerHTML = `
+            <strong>No custom nodes installed</strong><br><br>
+            To add custom nodes like KJNodes or Video Helper Suite,<br>
+            install them using ComfyUI Manager or place them in:<br>
+            <code style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">custom_nodes/</code>
         `;
+        container.appendChild(emptyState);
     } else {
         // Custom Extensions category header
         const customExtHeader = document.createElement('div');
