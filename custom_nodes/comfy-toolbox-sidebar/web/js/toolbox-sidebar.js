@@ -1780,6 +1780,17 @@ function renderAllNodesTab(container, state) {
         if (node.category && node.category.toLowerCase().startsWith('api node')) {
             mainCat = 'Partner Nodes';
         }
+        // Redirect misplaced folders from "Other" to proper categories
+        if (mainCat === 'Other') {
+            const cat = (node.category || '').toLowerCase();
+            if (cat === 'dataset' || cat.startsWith('dataset/')) {
+                mainCat = 'Image Processing';
+            } else if (cat === 'image' || cat.startsWith('image/')) {
+                mainCat = 'Image Processing';
+            } else if (cat === 'loaders' || cat.startsWith('loaders/')) {
+                mainCat = 'Model Loading';
+            }
+        }
         if (!nodesByMainCategory[mainCat]) {
             nodesByMainCategory[mainCat] = [];
         }
