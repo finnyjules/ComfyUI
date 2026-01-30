@@ -946,16 +946,20 @@ function injectStyles() {
         }
 
         .nodes-list-item-icon {
-            width: 6px;
-            height: 6px;
-            margin-right: 12px;
-            background: #52525b;
-            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin-right: 10px;
+            color: #52525b;
             flex-shrink: 0;
         }
 
+        .nodes-list-item-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
         .nodes-list-item:hover .nodes-list-item-icon {
-            background: #71717a;
+            color: #71717a;
         }
 
         .nodes-list-item-name {
@@ -1165,7 +1169,7 @@ function injectStyles() {
 const ICONS = {
     chevron: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>`,
     folder: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>`,
-    node: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle></svg>`,
+    node: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="4" width="14" height="16" rx="2" ry="2"></rect><circle cx="5" cy="9" r="2" fill="currentColor"></circle><circle cx="5" cy="15" r="2" fill="currentColor"></circle><circle cx="19" cy="12" r="2" fill="currentColor"></circle></svg>`,
     settings: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>`
 };
 
@@ -2138,7 +2142,7 @@ function createNodeListItem(node, state, showBadges = false) {
     }
 
     item.innerHTML = `
-        <span class="nodes-list-item-icon"></span>
+        <span class="nodes-list-item-icon">${ICONS.node}</span>
         <span class="nodes-list-item-name">${node.displayName}</span>
         ${badges}
     `;
